@@ -1,0 +1,13 @@
+CREATE TABLE Bible
+(
+        ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        Bookabbr_Kor VARCHAR(3),
+        Book_Kor VARCHAR(6),
+        Bookabbr_Eng VARCHAR(10),
+        Book_Eng VARCHAR(30),
+        Verse INT(3),
+        Chapter INT(4),
+        Word VARCHAR(1000)
+);
+
+LOAD DATA INFILE 'C:\Users\김호경\Documents\GitHub\Team\Team_KHK\Bible_After_Execl.txt'INTO TABLE oss_biblediary.bible CHARACTER SET utf8 FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
