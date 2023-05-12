@@ -28,7 +28,7 @@ typedef struct
 
 int checkUser();
 //저장된 id, password 비교해서 맞는지 확인하고 return 1, 0
-int selectFunction();
+int selectServices();
 //기능 선택.
 int addDiary(Diary *today);
 //새로운 일기를 작성. today에 있는 날짜 변수 사용. return strlen(today.contents) 수정할 때 다 수정하지 않기 위해;
