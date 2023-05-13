@@ -3,6 +3,7 @@
 #include <string.h>
 #include <direct.h>
 #include <io.h>
+#include <windwos.j>
 #define PATH "./"
 #define pr printf
 #define sc scanf
