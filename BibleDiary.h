@@ -3,10 +3,16 @@
 #include <string.h>
 #include <direct.h>
 #include <io.h>
-#include <windwos.j>
+#include <windows.h>
+
 #define PATH "./"
 #define pr printf
 #define sc scanf
+#define press 0x8000
+#define LF VK_LEFT
+#define RT VK_RIGHT
+#define UP VK_UP
+#define DW VK_DOWN
 
 typedef struct
 {
@@ -27,6 +33,8 @@ typedef struct
 
 //시간이 남을 경우 DB 연동해서 id, password 체크하는 기능을 넣어보자.
 
+void gotoxy(int x, int y);
+//지정한 값으로 마우스 커서 이동.
 int checkUser();
 //저장된 id, password 비교해서 맞는지 확인하고 return 1, 0
 int selectServices();
