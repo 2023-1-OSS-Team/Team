@@ -33,6 +33,7 @@ typedef struct
 
 //시간이 남을 경우 DB 연동해서 id, password 체크하는 기능을 넣어보자.
 
+void printForm();
 void gotoxy(int x, int y);
 //지정한 값으로 마우스 커서 이동.
 int checkUser();
