@@ -32,6 +32,7 @@ int loadStoredDiary(Diary *stored)
     else
         printf("\n=> 찾으시는 일기가 존재하지 않습니다.\n");
 
+    strcat(day, ".txt");
     fp = fopen(day, "r");
     if (fp == NULL)
         return;

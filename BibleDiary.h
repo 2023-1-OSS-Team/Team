@@ -50,9 +50,9 @@ void readDiary(Diary check);
 int updateDiary(Diary *today);
 // 작성한 일기를 수정. return strlen(today.contents)
 int deleteDiary(Diary *today);
-// 작성한 일기 삭제. return은 제대로 됐는지 확인. 1, -1
+// 작성한 일기 삭제. return은 제대로 됐는지 확인. 1, -1. loadStoredDiary 활용.
 int updateStoredDiary(Diary *stored);
-// 저장된 일기 수정. return은 제대로 됐는지 확인. 1, -1
+// 저장된 일기 수정. return은 제대로 됐는지 확인. 1, -1. loadStoredDiary 활용.
 int readStoredDiary(Diary *stored);
 // 저장된 일기를 불러와서 확인.
 int loadStoredDiary(Diary *sotred);
