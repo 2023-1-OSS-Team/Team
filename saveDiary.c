@@ -1,6 +1,6 @@
 #include "BibleDiary.h"
 
-void saveLedger(Diary today, Bible word)
+void saveDiary(Diary today, Bible word)
 {
     FILE *fp;
     char path[20];
@@ -9,7 +9,7 @@ void saveLedger(Diary today, Bible word)
     // 파일 포인터 선언, fopen의 경로를 담을 string variable path 선언하고 makeFolder 함수 불러와서 ./년/월의 디렉토리 형성
     // 파일을 저장하고 다시 원래의 경로로 돌아오기 위하여 
     char dd[10];
-    char dd[0] = '\0';
+    char dd[0] = '\0';//'\0'이 아닌지?
     chdir(path);
     sprintf(dd, "%d", today.day);
     strcat(dd, ".txt");

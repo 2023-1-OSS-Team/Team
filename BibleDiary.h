@@ -55,7 +55,7 @@ int updateStoredDiary(Diary stored, Bible last_word);
 // 저장된 일기 수정. return은 제대로 됐는지 확인. 1, -1. loadStoredDiary 활용.
 int readStoredDiary(Diary stored, Bible last_word);
 // 저장된 일기를 불러와서 확인.
-int loadStoredDiary(Diary *sotred, Bible *last_word);
+int loadStoredDiary(Diary *stored, Bible *last_word);
 // 저장된 일기 불러옴.
 int deleteStoredDiary(int yy, int mm, int dd);
 // 저장된 일기 삭제. 일기 삭제 후 파일 존재 유무 확인하고 파일이 없으면 폴더 삭제. 마지막은 연도 폴더 확인하고 아무것도 없으면 삭제하기. return은 제대로 됐는지 확인. 1, 0

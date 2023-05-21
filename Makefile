@@ -1,3 +1,4 @@
+/*
 CC = gcc
 CFLAGS =  -W -Wall
 TARGET = diary
@@ -10,3 +11,4 @@ $(TARGET) : $(OBJECTS)
 	$(CC) -o $@ $^
 clean : 
 	rm *.o diary
+*/

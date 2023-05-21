@@ -37,7 +37,7 @@ void todayWord(Bible *recommend)
     else
     {
         printf("\n성경 파일 읽어오기에 실패하였습니다.\n");
-        return 0;
+        return 0; //void타입..!?
     }
     fclose(fp);
 }
