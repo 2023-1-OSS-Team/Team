@@ -3,6 +3,7 @@
 #include <string.h>
 #include <direct.h>
 #include <io.h>
+#include <time.h>
 #include <windows.h>
 
 #define PATH "./"
@@ -70,6 +71,4 @@ void saveDiary(Diary today);
 void todayWord(Bible *recommend);
 /*기본적으로 time난수 돌려서 DB에서 랜덤으로 말씀 하나 불러옴.
 계속 돌릴 경우 랜덤 난수 사용 하고, 이 말씀으로 하시겠습니까 확인 받고 종료. 종료시 난수 저장.*/
-int searchWord();
-//함수 안에서 Bible serach 만들고 입력 받아서 보여줌. book, contetns 마지막 개행문자 제거하기.
 
