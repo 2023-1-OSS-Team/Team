@@ -1,6 +1,6 @@
 #include "BibleDiary.h"
 
-int addLedger(Diary *today)
+int add(Diary *today)
 {
     today->contents = (char *)malloc(sizeof(char));
 
