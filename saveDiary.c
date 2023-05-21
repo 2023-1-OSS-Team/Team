@@ -1,6 +1,6 @@
 #include "BibleDiary.h"
 
-void saveLedger(Diary today)
+void saveLedger(Diary today, Bible word)
 {
     FILE *fp;
     char path[20];
@@ -20,4 +20,4 @@ void saveLedger(Diary today)
     fclose(fp);
     pr("=> 저장이 완료되었습니다.\n");
     chdir(wd);
-}
+} // 묵상말씀 저장 // 개행문자 저장 // 일기 저장 // load할 때도 불러와야 함.

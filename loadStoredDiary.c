@@ -1,6 +1,6 @@
 #include "BibleDiary.h"
 
-int loadStoredDiary(Diary *stored)
+int loadStoredDiary(Diary *stored, Bible *last_word)
 {
     FILE *fp;
     int date[3];
@@ -51,4 +51,4 @@ int loadStoredDiary(Diary *stored)
         if(feof(fp)) return;
     }
     chdir(wd);
-}
+} // 묵상한 말씀 불러오는 기능 추가.

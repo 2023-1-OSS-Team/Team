@@ -55,12 +55,11 @@ int updateStoredDiary(Diary *stored);
 // 저장된 일기 수정. return은 제대로 됐는지 확인. 1, -1. loadStoredDiary 활용.
 int readStoredDiary(Diary *stored);
 // 저장된 일기를 불러와서 확인.
-int loadStoredDiary(Diary *sotred);
+int loadStoredDiary(Diary *sotred, Bible *last_word);
 // 저장된 일기 불러옴.
 int deleteStoredDiary(int yy, int mm, int dd);
 // 저장된 일기 삭제. 일기 삭제 후 파일 존재 유무 확인하고 파일이 없으면 폴더 삭제. 마지막은 연도 폴더 확인하고 아무것도 없으면 삭제하기. return은 제대로 됐는지 확인. 1, 0
 void listStoredDiary(int yy, int mm);
-void StoredDiary(Diary *stored);
 /*연, 연월 입력 받기 -> 조건에 맞춰서 리스트 보여주기
 listStoredDiary
 추가로 수행할 기능 여부 입력받기 o,x -> o일 경우 보기, 수정, 삭제 옵션 제시
@@ -68,7 +67,7 @@ listStoredDiary
 readDiary, deleteStoredDiary, updateStoredDiary*/
 int makeFolder(Diary today, char *path[]);
 // 작성한 일기 저장할 폴더 만듦. 1, -1.
-void saveDiary(Diary today);
+void saveDiary(Diary today, Bible word);
 // 작성한 일기 저장.
 void todayWord(Bible *recommend);
 /*기본적으로 time난수 돌려서 DB에서 랜덤으로 말씀 하나 불러옴.
