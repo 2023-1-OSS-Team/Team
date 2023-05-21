@@ -44,8 +44,8 @@ int checkUser();
 int selectServices();
 // 기능 선택.
 int addDiary(Diary *today);
-// 새로운 일기를 작성. today에 있는 날짜 변수 사용. return strlen(today.contents) 수정할 때 다 수정하지 않기 위해;
-void readDiary(Diary check);
+// 새로운 일기를 작성. today에 있는 날짜 변수 사용. return strlen(today.contents) 수정할 때 다 수정하지 않기 위해. time의 변수 사용하지 않는 이유는 예전에 작성 못 한 일기도 작성할 수 있게 하기 위함.
+void readDiary(Diary check, Bible today);
 // 작성한 일기를 확인.
 int updateDiary(Diary *today);
 // 작성한 일기를 수정. return strlen(today.contents)
