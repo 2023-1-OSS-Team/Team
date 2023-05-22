@@ -15,7 +15,7 @@ void saveDiary(Diary today, Bible word)
     fp = fopen(make_diary, "wt");
     if (today.year == -1 || today.mon == -1 || today.day == -1)
         return;
-    fprintf(fp, "%s %d %d\n %s\n", word.book[1], word.verse, word.chp, word.word);
+    fprintf(fp, "%s %d %d %s\n", word.book, word.verse, word.chp, word.word);
     fprintf(fp, "%s", today.contents);
     fclose(fp);
     pr("=> 저장이 완료되었습니다.\n");

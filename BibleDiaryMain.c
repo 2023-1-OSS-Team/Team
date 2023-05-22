@@ -78,6 +78,8 @@ int main(void) {
             printf("잘못된 입력입니다. 다시 입력해 주세요.\n");
         }
     }
-
+    for(int i = 0; i < 4; i++)
+        free(recommend.book[i]);
+    free(recommend.word);
     return 0;
 }
