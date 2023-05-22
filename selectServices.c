@@ -13,7 +13,7 @@ int selectServices()
     printf("7. 지난 일기 수정\n");
     printf("8. 지난 일기 삭제\n"); // 월간정산 불러올 지, 일간정산 불러올 지 입력 받고 하기.
     printf("0. 일기 종료하기\n\n");
-    printf(" >> 원하시는 메뉴를 선택하세요: ");
+    printf(" >> 원하시는 기능을 선택하세요: ");
     scanf("%d", &menu);
     printf("\n");
     return menu;

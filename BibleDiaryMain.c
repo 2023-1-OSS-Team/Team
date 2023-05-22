@@ -15,7 +15,7 @@ int main(void) {
             printf("프로그램을 종료합니다. 안녕히 가세요.\n\n");
             break;    
         } 
-        if (menu == 2 || menu == 3 || menu == 4 || menu == 5 || menu == 6 || menu == 8 || menu == 9)
+        if (menu == 2 || menu == 3 || menu == 4 || menu == 5)
             if (count == 0)
                 continue; //add가 안 돼 있으면 read, update, delete, save, search불가능
         if (menu == 1) 
