@@ -9,4 +9,4 @@ $(TARGET) : $(OBJECTS)
 	$(CC) -o $@ $^
 .PHONY: clean
 clean : 
-	del $(OBJECTS) diary.exe
+	del *.o diary.exe

@@ -6,7 +6,7 @@
 #include <errno.h>
 #include <Windows.h>
 #include <time.h>
-
+#include <dirent.h>
 
 #define PATH "./"
 #define pr printf
@@ -27,9 +27,9 @@ typedef struct
 
 typedef struct
 {
-    char *book[4];
+    char *book;
     int verse, chp;
-    char *word;
+    char word[200];
 } Bible;
 
 // Bible search, recommend;
@@ -65,7 +65,7 @@ listStoredDiary
 추가로 수행할 기능 여부 입력받기 o,x -> o일 경우 보기, 수정, 삭제 옵션 제시
 -> 연도 입력 받았으면 월일, 연월 입력 받았으면 일 입력받아 기능 수행하기
 readDiary, deleteStoredDiary, updateStoredDiary*/
-int makeFolder(Diary today, char *path);
+void makeFolder(Diary today);
 // 작성한 일기 저장할 폴더 만듦. 1, -1.
 void saveDiary(Diary today, Bible word);
 // 작성한 일기 저장.

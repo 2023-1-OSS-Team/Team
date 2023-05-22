@@ -9,15 +9,13 @@ int loadStoredDiary(Diary *stored, Bible *last_word)
     path[0] = '\0';
     file_name[0] = '\0';
     stored->contents = (char *)malloc(sizeof(char));
-    for(int i = 0;  i < 4; i++)
-        last_word->book[i] = (char*)malloc(sizeof(char));
-    last_word->word = (char*)malloc(sizeof(char));
+    last_word->book = (char*)malloc(sizeof(char));
 
+    while(getchar()!='\n');
     pr("불러오고 싶은 연도, 월, 일을 띄어서 입력해주세요(ex.2014 01 05): ");
     sc("%d %d %d", &stored->year, &stored->mon, &stored->day);
-    sprintf(path, "%s%d/%d/", PATH, stored->year, stored->mon);
     while(getchar()!='\n');
-
+    sprintf(path, "%d/%d", stored->year, stored->mon);
     if (access(path, 0) == 0)
         chdir(path);
     else
@@ -29,9 +27,10 @@ int loadStoredDiary(Diary *stored, Bible *last_word)
         return -1;
     else
     {  
-        fscanf(fp, "%s %d %d %s\n", last_word->book[1], &last_word->verse, &last_word->chp, last_word->word);
+        fscanf(fp, "%s %d %d", last_word->book, &last_word->verse, &last_word->chp);
         if(feof(fp)) return -1;
-        fscanf(fp, "%s", stored->contents);
+        fgets(last_word->word, 200, fp);
+        fgets(stored->contents, 1000, fp);
     }
     chdir(wd);
     return 1;

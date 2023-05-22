@@ -1,43 +1,55 @@
 #include "BibleDiary.h"
 
 int main(void) {
-    int menu;
-    int count = 0;
+    int menu, excute_check, start;
     Diary today, stored;
     Bible recommend, last_word;
     int yy, mm, dd;
-//    todayWord(Bible recommend);
+    todayWord(&recommend);
+    int check = 0;
+
     while (1) 
     {
-        int check = 0;
         menu = selectServices();
         if (menu == 0) 
         {
-            printf("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤. ì•ˆë…•íˆ ê°€ì„¸ìš”.\n\n");
+            pr("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù. ¾È³çÈ÷ °¡¼¼¿ä.\n\n");
             break;    
         } 
         if (menu == 2 || menu == 3 || menu == 4 || menu == 5)
-            if (count == 0)
-                continue; //addê°€ ì•ˆ ë¼ ìˆìœ¼ë©´ read, update, delete, save, searchë¶ˆê°€ëŠ¥
+            if(start == 0)
+            {
+                pr("\nÀÏ±â¸¦ ¸ÕÀú ÀÛ¼ºÇØ ÁÖ¼¼¿ä.\n");
+                continue; //add°¡ ¾È µÅ ÀÖÀ¸¸é read, update, delete, save, searchºÒ°¡´É
+            }
         if (menu == 1) 
         {
-            addDiary(&today);
-            count += addDiary(&today);
+            if(start != 0)
+            {
+                pr("\nÀÌ¹Ì ÀÛ¼ºµÈ ÀÏ±â°¡ Á¸ÀçÇÕ´Ï´Ù.\n");
+                continue;
+            }
+            excute_check = addDiary(&today);
+            start++;
         }          
         else if (menu == 2) 
         {
             readDiary(today, recommend);
         } 
         else if (menu == 3) 
-        {
-            updateDiary(&today);
+        {   
+            excute_check = updateDiary(&today);
         } 
         else if (menu == 4) 
-        {
-            pr("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ: 1, ì·¨ì†Œ: 0): ");
+        {   
+            pr("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦: 1, Ãë¼Ò: 0): ");
             sc("%d", &check);
+            getchar();
             if (check == 1)
-                deleteDiary(&today);
+            {
+                excute_check = deleteDiary(&today);
+                start--;
+            }
         } 
         else if (menu == 5) 
         {
@@ -45,34 +57,37 @@ int main(void) {
         } 
         else if (menu == 6) 
         {   
-            pr("í™•ì¸í•˜ê³  ì‹¶ì€ ì—°ë„, ì›”ì„ ë„ì–´ì„œ ì…ë ¥í•´ì£¼ì„¸ìš”(ex.2014 01): ");
+            pr("È®ÀÎÇÏ°í ½ÍÀº ¿¬µµ, ¿ùÀ» ¶ç¾î¼­ ÀÔ·ÂÇØÁÖ¼¼¿ä(ex.2014 01): ");
             sc("%d %d", &yy, &mm);
+            getchar();
             listStoredDiary(yy, mm);
         } 
         else if (menu == 7) 
         {
-            readStoredDiary(stored, last_word);
+            excute_check = readStoredDiary(stored, last_word);
         } 
         else if (menu == 8) 
         {
-            updateStoredDiary(stored, last_word);
+            excute_check = updateStoredDiary(stored, last_word);
         } 
         else if (menu == 9) 
         {   
-            pr("ì‚­ì œí•˜ê³  ì‹¶ì€ ì—°ë„, ì›”ì„ ë„ì–´ì„œ ì…ë ¥í•´ì£¼ì„¸ìš”(ex.2014 01): ");
-            sc("%d %d", &yy, &mm);
-            pr("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ: 1, ì·¨ì†Œ: 0)");
+            pr("»èÁ¦ÇÏ°í ½ÍÀº ¿¬µµ, ¿ù, ÀÏÀ» ¶ç¾î¼­ ÀÔ·ÂÇØÁÖ¼¼¿ä(ex.2014 01 05): ");
+            sc("%d %d %d", &yy, &mm, &dd);
+            pr("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦: 1, Ãë¼Ò: 0)");
             sc("%d", &check);
+            getchar();
             if (check == 1)
-                deleteStoredDiary(yy, mm, dd);
+                excute_check = deleteStoredDiary(yy, mm, dd);
             else if(check == 0)
                 continue;
-            else
-                pr("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”.\n");
+        else
+            pr("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.\n");
         }  
     }
-    for(int i = 0; i < 4; i++)
-        free(recommend.book[i]);
-    free(recommend.word);
+    free(recommend.book);
+    free(today.contents);
+    free(last_word.book);
+    free(stored.contents);
     return 0;
 }

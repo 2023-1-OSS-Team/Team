@@ -8,7 +8,7 @@ int readStoredDiary(Diary stored, Bible last_word)
     else
     {
         pr("\nø¿¥√ ≥Ø¬•: %d-%d-%d\n", stored.year, stored.mon, stored.day);
-        pr("\nø¿¥√¿« π¨ªÛ ∏ªæ∏: %s %d %d\n %s\n", last_word.book[1], last_word.verse, last_word.chp, last_word.word);
+        pr("\nø¿¥√¿« π¨ªÛ ∏ªæ∏: %s %d %d\n %s\n", last_word.book, last_word.verse, last_word.chp, last_word.word);
         pr("\n¿œ±‚ ≥ªøÎ: %s", stored.contents);
     }
     return 1;

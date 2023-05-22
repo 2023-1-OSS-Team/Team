@@ -4,28 +4,26 @@ typedef struct _finddata_t SEARCH;
 
 void listStoredDiary(int yy, int mm)
 {
+    char path[15];
+    path[0] = '\0';
+    char *wd = getcwd(NULL, 0);
+    char *ptr;
+
+    sprintf(path, "%d/%d/", yy, mm);
+    chdir(path);
     SEARCH fd;
     long handle;
     int result = 1;
-    char path[15];
-    char* ptr;
-    path[0] = '\0';
-    char *wd = getcwd(NULL, 0);
-
-    sprintf(path, "%s%d/%d/", PATH, yy, mm);
-    handle = _findfirst(path, &fd);  //현재 폴더 내 모든 파일을 찾는다.
- 
+    handle = _findfirst("./*.txt", &fd);  //현재 폴더 내 모든 파일을 찾는다.
     if (handle == -1)
-    {
-        printf("\n아무 파일도 존재하지 않습니다.\n");
         return;
-    }
-    int count = 1;
+    pr("\n%d년 %d월에 작성하신 일기 목록\n\n", yy, mm);
     while (result != -1)
-    {
-        printf("%d번 파일: %s\n", count, fd.name);
-        count++;
+    {   
+        ptr = strtok(fd.name, ".");
+        pr("%s일\n", ptr);
         result = _findnext(handle, &fd);
     }
     _findclose(handle);
+    chdir(wd);
 }

@@ -2,7 +2,10 @@
 
 void readDiary(Diary check, Bible word)
 {
+    if(check.year == -1 || check.mon == -1 || check.day == -1 )
+        return;
     pr("\nø¿¥√ ≥Ø¬•: %d-%d-%d\n", check.year, check.mon, check.day);
-    pr("\nø¿¥√¿« π¨ªÛ ∏ªæ∏: %s %d %d\n %s\n", word.book[1], word.verse, word.chp, word.word);
-    pr("\n¿œ±‚ ≥ªøÎ: %s", check.contents);
+    pr("\nø¿¥√¿« π¨ªÛ ∏ªæ∏: %s %d %d\n %s\n", word.book, word.verse, word.chp, word.word);
+    pr("\n¿œ±‚ ≥ªøÎ: ");
+    puts(check.contents);    
 }
