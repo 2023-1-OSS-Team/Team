@@ -30,7 +30,7 @@ int loadStoredDiary(Diary *stored, Bible *last_word)
     else
     {  
         fscanf(fp, "%s %d %d %s\n", last_word->book[1], &last_word->verse, &last_word->chp, last_word->word);
-        if(feof(fp)) return;
+        if(feof(fp)) return -1;
         fscanf(fp, "%s", stored->contents);
     }
     chdir(wd);
