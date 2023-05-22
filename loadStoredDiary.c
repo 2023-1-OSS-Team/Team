@@ -26,10 +26,10 @@ int loadStoredDiary(Diary *stored, Bible *last_word)
     sprintf(file_name, "%d.txt", stored->day);
     fp = fopen(file_name, "r");
     if (fp == NULL)
-        return;
+        return -1;
     else
     {  
-        fscanf(fp, "%s %d %d %s\n", last_word->book[1], &last_word->verse, &last_word->chp, &last_word->word);
+        fscanf(fp, "%s %d %d %s\n", last_word->book[1], &last_word->verse, &last_word->chp, last_word->word);
         if(feof(fp)) return;
         fscanf(fp, "%s", stored->contents);
     }

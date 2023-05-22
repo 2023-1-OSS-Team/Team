@@ -3,8 +3,9 @@
 int main(void) {
     int menu;
     int count = 0;
-    Diary today;
-    Bible recommend;
+    Diary today, stored;
+    Bible recommend, last_word;
+    int yy, mm, dd;
 //    todayWord(Bible recommend);
     while (1) 
     {
@@ -33,50 +34,42 @@ int main(void) {
         } 
         else if (menu == 4) 
         {
-            printf("정말로 삭제하시겠습니까?(삭제 :1)");
-            scanf("%d", &check);
+            pr("정말로 삭제하시겠습니까?(삭제: 1, 취소: 0): ");
+            sc("%d", &check);
             if (check == 1)
-            {
-                if (deleteDiary(&today) == 1)
-                {
-                    count--;
-                }
-            }
-            printf("\n=> 삭제되었습니다.\n");
+                deleteDiary(&today);
         } 
         else if (menu == 5) 
         {
             saveDiary(today, recommend);
         } 
         else if (menu == 6) 
-        {
-            listStoredDiary(today.year, today.mon);
+        {   
+            pr("확인하고 싶은 연도, 월을 띄어서 입력해주세요(ex.2014 01): ");
+            sc("%d %d", &yy, &mm);
+            listStoredDiary(yy, mm);
         } 
         else if (menu == 7) 
         {
-            readStoredDiary(today, recommend);
+            readStoredDiary(stored, last_word);
         } 
         else if (menu == 8) 
         {
-            updateStoredDiary(today, recommend);
+            updateStoredDiary(stored, last_word);
         } 
         else if (menu == 9) 
-        {        
-            printf("정말로 삭제하시겠습니까?(삭제 :1)");
-            scanf("%d", &check);
+        {   
+            pr("삭제하고 싶은 연도, 월을 띄어서 입력해주세요(ex.2014 01): ");
+            sc("%d %d", &yy, &mm);
+            pr("정말로 삭제하시겠습니까?(삭제: 1, 취소: 0)");
+            sc("%d", &check);
             if (check == 1)
-            {
-                if (deleteStoredDiary(today.year, today.mon, today.day) == 1)
-                {
-                    count--;
-                }
-            }
-            printf("\n=> 삭제되었습니다.\n");
+                deleteStoredDiary(yy, mm, dd);
+            else if(check == 0)
+                continue;
+            else
+                pr("잘못된 입력입니다. 다시 입력해 주세요.\n");
         }  
-        else 
-        {
-            printf("잘못된 입력입니다. 다시 입력해 주세요.\n");
-        }
     }
     for(int i = 0; i < 4; i++)
         free(recommend.book[i]);
