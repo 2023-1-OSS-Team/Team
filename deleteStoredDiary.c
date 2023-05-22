@@ -18,10 +18,10 @@ int deleteStoredDiary(int yy, int mm, int dd)
     strcat(path, ".txt");
 
     if (remove(path) == 0)
-        printf("\n=> ì¼ê¸°ê°€ ì •ìƒì ìœ¼ë¡œ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+        printf("\n=> ÀÏ±â°¡ Á¤»óÀûÀ¸·Î »èÁ¦µÇ¾ú½À´Ï´Ù.\n");
     else
     {
-        printf("\n=> ì°¾ìœ¼ì‹œëŠ” ì¼ê¸°ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
+        printf("\n=> Ã£À¸½Ã´Â ÀÏ±â°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
         return 0;
     }
     chdir(wd);

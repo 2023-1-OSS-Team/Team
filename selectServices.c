@@ -3,18 +3,18 @@
 int selectServices()
 {
     int menu;
-    printf("\n*** ì„±ê²½ ë¬µìƒ ì¼ê¸° ìž‘ì„± ***\n");
-    printf("1. ì˜¤ëŠ˜ ì¼ê¸° ì“°ê¸°\n");
-    printf("2. ì˜¤ëŠ˜ ì¼ê¸° ë³´ê¸°\n");
-    printf("3. ì˜¤ëŠ˜ ì¼ê¸° ìˆ˜ì •\n");
-    printf("4. ì˜¤ëŠ˜ ì¼ê¸° ì‚­ì œ\n");
-    printf("5. ì˜¤ëŠ˜ ì¼ê¸° ì €ìž¥\n");
-    printf("6. ì§€ë‚œ ì¼ê¸° ë³´ê¸°\n");
-    printf("7. ì§€ë‚œ ì¼ê¸° ìˆ˜ì •\n");
-    printf("8. ì§€ë‚œ ì¼ê¸° ì‚­ì œ\n"); // ì›”ê°„ì •ì‚° ë¶ˆëŸ¬ì˜¬ ì§€, ì¼ê°„ì •ì‚° ë¶ˆëŸ¬ì˜¬ ì§€ ìž…ë ¥ ë°›ê³  í•˜ê¸°.
-    printf("0. ì¼ê¸° ì¢…ë£Œí•˜ê¸°\n\n");
-    printf(" >> ì›í•˜ì‹œëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”: ");
+    printf("\n*** ¼º°æ ¹¬»ó ÀÏ±â ÀÛ¼º ***\n");
+    printf("1. ¿À´Ã ÀÏ±â ¾²±â\n");
+    printf("2. ¿À´Ã ÀÏ±â º¸±â\n");
+    printf("3. ¿À´Ã ÀÏ±â ¼öÁ¤\n");
+    printf("4. ¿À´Ã ÀÏ±â »èÁ¦\n");
+    printf("5. ¿À´Ã ÀÏ±â ÀúÀå\n");
+    printf("6. Áö³­ ÀÏ±â º¸±â\n");
+    printf("7. Áö³­ ÀÏ±â ¼öÁ¤\n");
+    printf("8. Áö³­ ÀÏ±â »èÁ¦\n"); // ¿ù°£Á¤»ê ºÒ·¯¿Ã Áö, ÀÏ°£Á¤»ê ºÒ·¯¿Ã Áö ÀÔ·Â ¹Þ°í ÇÏ±â.
+    printf("0. ÀÏ±â Á¾·áÇÏ±â\n\n");
+    printf(" >> ¿øÇÏ½Ã´Â ¸Þ´º¸¦ ¼±ÅÃÇÏ¼¼¿ä: ");
     scanf("%d", &menu);
     printf("\n");
     return menu;
-} // UIëŠ” ìž„ì‹œë¡œ ì´ë ‡ê²Œ ì‚¬ìš©í•˜ë˜ ê°œë°œ ë§ˆë¬´ë¦¬ ê³¼ì •ì—ì„œ ìˆ˜ì •í•  ê²ƒ.
+} // UI´Â ÀÓ½Ã·Î ÀÌ·¸°Ô »ç¿ëÇÏµÇ °³¹ß ¸¶¹«¸® °úÁ¤¿¡¼­ ¼öÁ¤ÇÒ °Í.

@@ -5,34 +5,34 @@ int updateStoredDiary(Diary stored, Bible last_word)
     int result = loadStoredDiary(&stored, &last_word);
 
     if (result != 1) {
-        printf("\n=> ì €ì¥ëœ ì¼ê¸°ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” ë° ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
+        printf("\n=> ÀúÀåµÈ ÀÏ±â¸¦ ºÒ·¯¿À´Â µ¥ ½ÇÆĞÇß½À´Ï´Ù.\n");
         return -1;
     }
 
-    printf("\nì €ì¥ëœ ì¼ê¸° ë‚´ìš©ì„ ìˆ˜ì •í•©ë‹ˆë‹¤.\n");
-    printf("ì´ì „ ë‚´ìš©: %s\n", stored.contents);
+    printf("\nÀúÀåµÈ ÀÏ±â ³»¿ëÀ» ¼öÁ¤ÇÕ´Ï´Ù.\n");
+    printf("ÀÌÀü ³»¿ë: %s\n", stored.contents);
 
     result = updateDiary(&stored);
 
     if (result != 1) {
-        printf("\n=> ì¼ê¸° ë‚´ìš© ìˆ˜ì •ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
+        printf("\n=> ÀÏ±â ³»¿ë ¼öÁ¤¿¡ ½ÇÆĞÇß½À´Ï´Ù.\n");
         return -1;
     }
 
-    printf("\nìˆ˜ì •ëœ ì¼ê¸° ë‚´ìš©: %s\n", stored.contents);
+    printf("\n¼öÁ¤µÈ ÀÏ±â ³»¿ë: %s\n", stored.contents);
 
     // Save the modified diary back to storage
     char path[15]; // Replace with appropriate path
     snprintf(path, sizeof(path), "%d/%d/%d.txt", stored.year, stored.mon, stored.day);
     FILE *fp = fopen(path, "w");
     if (fp == NULL) {
-        printf("\n=> ìˆ˜ì •ëœ ì¼ê¸°ë¥¼ ì €ì¥í•˜ëŠ” ë° ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
+        printf("\n=> ¼öÁ¤µÈ ÀÏ±â¸¦ ÀúÀåÇÏ´Â µ¥ ½ÇÆĞÇß½À´Ï´Ù.\n");
         return -1;
     }
     fprintf(fp, "%s", stored.contents);
     fclose(fp);
 
-    printf("\nìˆ˜ì •ëœ ì¼ê¸°ë¥¼ ì €ì¥í–ˆìŠµë‹ˆë‹¤.\n");
+    printf("\n¼öÁ¤µÈ ÀÏ±â¸¦ ÀúÀåÇß½À´Ï´Ù.\n");
 
     return 1;
 }

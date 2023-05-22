@@ -34,41 +34,41 @@ typedef struct
 
 // Bible search, recommend;
 
-// ì‹œê°„ì´ ë‚¨ì„ ê²½ìš° DB ì—°ë™í•´ì„œ id, password ì²´í¬í•˜ëŠ” ê¸°ëŠ¥ì„ ë„£ì–´ë³´ìž.
+// ½Ã°£ÀÌ ³²À» °æ¿ì DB ¿¬µ¿ÇØ¼­ id, password Ã¼Å©ÇÏ´Â ±â´ÉÀ» ³Ö¾îº¸ÀÚ.
 
 void printForm();
 void gotoxy(int x, int y);
-// ì§€ì •í•œ ê°’ìœ¼ë¡œ ë§ˆìš°ìŠ¤ ì»¤ì„œ ì´ë™.
+// ÁöÁ¤ÇÑ °ªÀ¸·Î ¸¶¿ì½º Ä¿¼­ ÀÌµ¿.
 int checkUser();
-// ì €ìž¥ëœ id, password ë¹„êµí•´ì„œ ë§žëŠ”ì§€ í™•ì¸í•˜ê³  return 1, -1
+// ÀúÀåµÈ id, password ºñ±³ÇØ¼­ ¸Â´ÂÁö È®ÀÎÇÏ°í return 1, -1
 int selectServices();
-// ê¸°ëŠ¥ ì„ íƒ.
+// ±â´É ¼±ÅÃ.
 int addDiary(Diary *today);
-// ìƒˆë¡œìš´ ì¼ê¸°ë¥¼ ìž‘ì„±. todayì— ìžˆëŠ” ë‚ ì§œ ë³€ìˆ˜ ì‚¬ìš©. return strlen(today.contents) ìˆ˜ì •í•  ë•Œ ë‹¤ ìˆ˜ì •í•˜ì§€ ì•Šê¸° ìœ„í•´. timeì˜ ë³€ìˆ˜ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” ì´ìœ ëŠ” ì˜ˆì „ì— ìž‘ì„± ëª» í•œ ì¼ê¸°ë„ ìž‘ì„±í•  ìˆ˜ ìžˆê²Œ í•˜ê¸° ìœ„í•¨.
+// »õ·Î¿î ÀÏ±â¸¦ ÀÛ¼º. today¿¡ ÀÖ´Â ³¯Â¥ º¯¼ö »ç¿ë. return strlen(today.contents) ¼öÁ¤ÇÒ ¶§ ´Ù ¼öÁ¤ÇÏÁö ¾Ê±â À§ÇØ. timeÀÇ º¯¼ö »ç¿ëÇÏÁö ¾Ê´Â ÀÌÀ¯´Â ¿¹Àü¿¡ ÀÛ¼º ¸ø ÇÑ ÀÏ±âµµ ÀÛ¼ºÇÒ ¼ö ÀÖ°Ô ÇÏ±â À§ÇÔ.
 void readDiary(Diary check, Bible word);
-// ìž‘ì„±í•œ ì¼ê¸°ë¥¼ í™•ì¸.
+// ÀÛ¼ºÇÑ ÀÏ±â¸¦ È®ÀÎ.
 int updateDiary(Diary *today);
-// ìž‘ì„±í•œ ì¼ê¸°ë¥¼ ìˆ˜ì •. return strlen(today.contents)
+// ÀÛ¼ºÇÑ ÀÏ±â¸¦ ¼öÁ¤. return strlen(today.contents)
 int deleteDiary(Diary *today);
-// ìž‘ì„±í•œ ì¼ê¸° ì‚­ì œ. returnì€ ì œëŒ€ë¡œ ëëŠ”ì§€ í™•ì¸. 1, -1. loadStoredDiary í™œìš©.
+// ÀÛ¼ºÇÑ ÀÏ±â »èÁ¦. returnÀº Á¦´ë·Î µÆ´ÂÁö È®ÀÎ. 1, -1. loadStoredDiary È°¿ë.
 int updateStoredDiary(Diary stored, Bible last_word);
-// ì €ìž¥ëœ ì¼ê¸° ìˆ˜ì •. returnì€ ì œëŒ€ë¡œ ëëŠ”ì§€ í™•ì¸. 1, -1. loadStoredDiary í™œìš©.
+// ÀúÀåµÈ ÀÏ±â ¼öÁ¤. returnÀº Á¦´ë·Î µÆ´ÂÁö È®ÀÎ. 1, -1. loadStoredDiary È°¿ë.
 int readStoredDiary(Diary stored, Bible last_word);
-// ì €ìž¥ëœ ì¼ê¸°ë¥¼ ë¶ˆëŸ¬ì™€ì„œ í™•ì¸.
+// ÀúÀåµÈ ÀÏ±â¸¦ ºÒ·¯¿Í¼­ È®ÀÎ.
 int loadStoredDiary(Diary *stored, Bible *last_word);
-// ì €ìž¥ëœ ì¼ê¸° ë¶ˆëŸ¬ì˜´.
+// ÀúÀåµÈ ÀÏ±â ºÒ·¯¿È.
 int deleteStoredDiary(int yy, int mm, int dd);
-// ì €ìž¥ëœ ì¼ê¸° ì‚­ì œ. ì¼ê¸° ì‚­ì œ í›„ íŒŒì¼ ì¡´ìž¬ ìœ ë¬´ í™•ì¸í•˜ê³  íŒŒì¼ì´ ì—†ìœ¼ë©´ í´ë” ì‚­ì œ. ë§ˆì§€ë§‰ì€ ì—°ë„ í´ë” í™•ì¸í•˜ê³  ì•„ë¬´ê²ƒë„ ì—†ìœ¼ë©´ ì‚­ì œí•˜ê¸°. returnì€ ì œëŒ€ë¡œ ëëŠ”ì§€ í™•ì¸. 1, 0
+// ÀúÀåµÈ ÀÏ±â »èÁ¦. ÀÏ±â »èÁ¦ ÈÄ ÆÄÀÏ Á¸Àç À¯¹« È®ÀÎÇÏ°í ÆÄÀÏÀÌ ¾øÀ¸¸é Æú´õ »èÁ¦. ¸¶Áö¸·Àº ¿¬µµ Æú´õ È®ÀÎÇÏ°í ¾Æ¹«°Íµµ ¾øÀ¸¸é »èÁ¦ÇÏ±â. returnÀº Á¦´ë·Î µÆ´ÂÁö È®ÀÎ. 1, 0
 void listStoredDiary(int yy, int mm);
-/*ì—°, ì—°ì›” ìž…ë ¥ ë°›ê¸° -> ì¡°ê±´ì— ë§žì¶°ì„œ ë¦¬ìŠ¤íŠ¸ ë³´ì—¬ì£¼ê¸°
+/*¿¬, ¿¬¿ù ÀÔ·Â ¹Þ±â -> Á¶°Ç¿¡ ¸ÂÃç¼­ ¸®½ºÆ® º¸¿©ÁÖ±â
 listStoredDiary
-ì¶”ê°€ë¡œ ìˆ˜í–‰í•  ê¸°ëŠ¥ ì—¬ë¶€ ìž…ë ¥ë°›ê¸° o,x -> oì¼ ê²½ìš° ë³´ê¸°, ìˆ˜ì •, ì‚­ì œ ì˜µì…˜ ì œì‹œ
--> ì—°ë„ ìž…ë ¥ ë°›ì•˜ìœ¼ë©´ ì›”ì¼, ì—°ì›” ìž…ë ¥ ë°›ì•˜ìœ¼ë©´ ì¼ ìž…ë ¥ë°›ì•„ ê¸°ëŠ¥ ìˆ˜í–‰í•˜ê¸°
+Ãß°¡·Î ¼öÇàÇÒ ±â´É ¿©ºÎ ÀÔ·Â¹Þ±â o,x -> oÀÏ °æ¿ì º¸±â, ¼öÁ¤, »èÁ¦ ¿É¼Ç Á¦½Ã
+-> ¿¬µµ ÀÔ·Â ¹Þ¾ÒÀ¸¸é ¿ùÀÏ, ¿¬¿ù ÀÔ·Â ¹Þ¾ÒÀ¸¸é ÀÏ ÀÔ·Â¹Þ¾Æ ±â´É ¼öÇàÇÏ±â
 readDiary, deleteStoredDiary, updateStoredDiary*/
 int makeFolder(Diary today, char *path[]);
-// ìž‘ì„±í•œ ì¼ê¸° ì €ìž¥í•  í´ë” ë§Œë“¦. 1, -1.
+// ÀÛ¼ºÇÑ ÀÏ±â ÀúÀåÇÒ Æú´õ ¸¸µê. 1, -1.
 void saveDiary(Diary today, Bible word);
-// ìž‘ì„±í•œ ì¼ê¸° ì €ìž¥.
+// ÀÛ¼ºÇÑ ÀÏ±â ÀúÀå.
 void todayWord(Bible *recommend);
-/*ê¸°ë³¸ì ìœ¼ë¡œ timeë‚œìˆ˜ ëŒë ¤ì„œ DBì—ì„œ ëžœë¤ìœ¼ë¡œ ë§ì”€ í•˜ë‚˜ ë¶ˆëŸ¬ì˜´.
-ê³„ì† ëŒë¦´ ê²½ìš° ëžœë¤ ë‚œìˆ˜ ì‚¬ìš© í•˜ê³ , ì´ ë§ì”€ìœ¼ë¡œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ í™•ì¸ ë°›ê³  ì¢…ë£Œ. ì¢…ë£Œì‹œ ë‚œìˆ˜ ì €ìž¥.*/
+/*±âº»ÀûÀ¸·Î time³­¼ö µ¹·Á¼­ DB¿¡¼­ ·£´ýÀ¸·Î ¸»¾¸ ÇÏ³ª ºÒ·¯¿È.
+°è¼Ó µ¹¸± °æ¿ì ·£´ý ³­¼ö »ç¿ë ÇÏ°í, ÀÌ ¸»¾¸À¸·Î ÇÏ½Ã°Ú½À´Ï±î È®ÀÎ ¹Þ°í Á¾·á. Á¾·á½Ã ³­¼ö ÀúÀå.*/

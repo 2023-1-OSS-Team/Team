@@ -35,10 +35,10 @@ void todayWord(Bible *recommend)
                 line_count++;
                 fgets(buffer, 200, fp);
             }
-            pr("ì˜¤ëŠ˜ì˜ ì„±ê²½ ë§ì”€: %s %dìž¥ %dì ˆ\n\n%s\n", recommend->book[1], recommend->verse, recommend->chp, recommend->word);
+            pr("¿À´ÃÀÇ ¼º°æ ¸»¾¸: %s %dÀå %dÀý\n\n%s\n", recommend->book[1], recommend->verse, recommend->chp, recommend->word);
         }
     else
-        printf("\nì„±ê²½ íŒŒì¼ ì½ì–´ì˜¤ê¸°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.\n");
+        printf("\n¼º°æ ÆÄÀÏ ÀÐ¾î¿À±â¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù.\n");
     
 
     fclose(fp);

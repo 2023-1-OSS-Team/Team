@@ -8,8 +8,8 @@ void saveDiary(Diary today, Bible word)
     char make_diary[0] = '\0';
     makeFolder(today, path);
     char *wd = getcwd(NULL, 0);
-    // íŒŒì¼ í¬ì¸í„° ì„ ì–¸, fopenì˜ ê²½ë¡œë¥¼ ë‹´ì„ string variable path ì„ ì–¸í•˜ê³  makeFolder í•¨ìˆ˜ ë¶ˆëŸ¬ì™€ì„œ ./ë…„/ì›”ì˜ ë””ë ‰í† ë¦¬ í˜•ì„±
-    // íŒŒì¼ì„ ì €ìž¥í•˜ê³  ë‹¤ì‹œ ì›ëž˜ì˜ ê²½ë¡œë¡œ ëŒì•„ì˜¤ê¸° ìœ„í•˜ì—¬ 
+    // ÆÄÀÏ Æ÷ÀÎÅÍ ¼±¾ð, fopenÀÇ °æ·Î¸¦ ´ãÀ» string variable path ¼±¾ðÇÏ°í makeFolder ÇÔ¼ö ºÒ·¯¿Í¼­ ./³â/¿ùÀÇ µð·ºÅä¸® Çü¼º
+    // ÆÄÀÏÀ» ÀúÀåÇÏ°í ´Ù½Ã ¿ø·¡ÀÇ °æ·Î·Î µ¹¾Æ¿À±â À§ÇÏ¿© 
     chdir(path);
     sprintf(make_diary, "%d.txt", today.day);
     fp = fopen(make_diary, "wt");
@@ -18,6 +18,6 @@ void saveDiary(Diary today, Bible word)
     fprintf(fp, "%s %d %d %s\n", word.book, word.verse, word.chp, word.word);
     fprintf(fp, "%s", today.contents);
     fclose(fp);
-    pr("=> ì €ìž¥ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+    pr("=> ÀúÀåÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.\n");
     chdir(wd);
-} // ë¬µìƒë§ì”€ ì €ìž¥ // ê°œí–‰ë¬¸ìž ì €ìž¥ // ì¼ê¸° ì €ìž¥ // loadí•  ë•Œë„ ë¶ˆëŸ¬ì™€ì•¼ í•¨.
+} // ¹¬»ó¸»¾¸ ÀúÀå // °³Çà¹®ÀÚ ÀúÀå // ÀÏ±â ÀúÀå // loadÇÒ ¶§µµ ºÒ·¯¿Í¾ß ÇÔ.

@@ -17,7 +17,7 @@ void listStoredDiary(int yy, int mm)
     strcat(dir, PATH);
     char *wd = getcwd(NULL, 0);
 
-    pr("í™•ì¸í•˜ê³  ì‹¶ì€ ì—°ë„, ì›”ì„ ë„ì–´ì„œ ì…ë ¥í•´ì£¼ì„¸ìš”(ex.2014-01): ");
+    pr("È®ÀÎÇÏ°í ½ÍÀº ¿¬µµ, ¿ùÀ» ¶ç¾î¼­ ÀÔ·ÂÇØÁÖ¼¼¿ä(ex.2014-01): ");
     sc("%s", path);
 
     for(int i = 0; i < 10; i++)
@@ -27,17 +27,17 @@ void listStoredDiary(int yy, int mm)
             strncpy(ptr, "/", 1);
     } 
     strcat(dir, path);  
-    handle = _findfirst(dir, &fd);  //í˜„ì¬ í´ë” ë‚´ ëª¨ë“  íŒŒì¼ì„ ì°¾ëŠ”ë‹¤.
+    handle = _findfirst(dir, &fd);  //ÇöÀç Æú´õ ³» ¸ğµç ÆÄÀÏÀ» Ã£´Â´Ù.
  
     if (handle == -1)
     {
-        printf("\nì•„ë¬´ íŒŒì¼ë„ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
+        printf("\n¾Æ¹« ÆÄÀÏµµ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
         return;
     }
     int count = 1;
     while (result != -1)
     {
-        printf("%dë²ˆ íŒŒì¼: %s\n", count, fd.name);
+        printf("%d¹ø ÆÄÀÏ: %s\n", count, fd.name);
         count++;
         result = _findnext(handle, &fd);
     }

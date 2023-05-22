@@ -13,7 +13,7 @@ int loadStoredDiary(Diary *stored, Bible *last_word)
         last_word->book[i] = (char*)malloc(sizeof(char));
     last_word->word = (char*)malloc(sizeof(char));
 
-    pr("ë¶ˆëŸ¬ì˜¤ê³  ì‹¶ì€ ì—°ë„, ì›”, ì¼ì„ ë„ì–´ì„œ ì…ë ¥í•´ì£¼ì„¸ìš”(ex.2014 01 05): ");
+    pr("ºÒ·¯¿À°í ½ÍÀº ¿¬µµ, ¿ù, ÀÏÀ» ¶ç¾î¼­ ÀÔ·ÂÇØÁÖ¼¼¿ä(ex.2014 01 05): ");
     sc("%d %d %d", &stored->year, &stored->mon, &stored->day);
     sprintf(path, "%s%d/%d/", PATH, stored->year, stored->mon);
     while(getchar()!='\n');
@@ -21,7 +21,7 @@ int loadStoredDiary(Diary *stored, Bible *last_word)
     if (access(path, 0) == 0)
         chdir(path);
     else
-        printf("\n=> ì°¾ìœ¼ì‹œëŠ” ì¼ê¸°ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
+        printf("\n=> Ã£À¸½Ã´Â ÀÏ±â°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
 
     sprintf(file_name, "%d.txt", stored->day);
     fp = fopen(file_name, "r");
@@ -35,4 +35,4 @@ int loadStoredDiary(Diary *stored, Bible *last_word)
     }
     chdir(wd);
     return 1;
-} // ë¬µìƒí•œ ë§ì”€ ë¶ˆëŸ¬ì˜¤ëŠ” ê¸°ëŠ¥ ì¶”ê°€.
+} // ¹¬»óÇÑ ¸»¾¸ ºÒ·¯¿À´Â ±â´É Ãß°¡.

@@ -12,12 +12,12 @@ int main(void) {
         menu = selectServices();
         if (menu == 0) 
         {
-            printf("í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤. ì•ˆë…•ížˆ ê°€ì„¸ìš”.\n\n");
+            printf("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù. ¾È³çÈ÷ °¡¼¼¿ä.\n\n");
             break;    
         } 
         if (menu == 2 || menu == 3 || menu == 4 || menu == 5 || menu == 6 || menu == 8 || menu == 9)
             if (count == 0)
-                continue; //addê°€ ì•ˆ ë¼ ìžˆìœ¼ë©´ read, update, delete, save, searchë¶ˆê°€ëŠ¥
+                continue; //add°¡ ¾È µÅ ÀÖÀ¸¸é read, update, delete, save, searchºÒ°¡´É
         if (menu == 1) 
         {
             addDiary(&today);
@@ -33,7 +33,7 @@ int main(void) {
         } 
         else if (menu == 4) 
         {
-            printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ :1)");
+            printf("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦ :1)");
             scanf("%d", &check);
             if (check == 1)
             {
@@ -42,7 +42,7 @@ int main(void) {
                     count--;
                 }
             }
-            printf("\n=> ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+            printf("\n=> »èÁ¦µÇ¾ú½À´Ï´Ù.\n");
         } 
         else if (menu == 5) 
         {
@@ -62,7 +62,7 @@ int main(void) {
         } 
         else if (menu == 9) 
         {        
-            printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ :1)");
+            printf("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦ :1)");
             scanf("%d", &check);
             if (check == 1)
             {
@@ -71,11 +71,11 @@ int main(void) {
                     count--;
                 }
             }
-            printf("\n=> ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+            printf("\n=> »èÁ¦µÇ¾ú½À´Ï´Ù.\n");
         }  
         else 
         {
-            printf("ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ ì£¼ì„¸ìš”.\n");
+            printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.\n");
         }
     }
     for(int i = 0; i < 4; i++)

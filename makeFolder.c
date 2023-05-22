@@ -4,7 +4,7 @@ int makeFolder(Diary today, char* path[])
 {   
     //char *wd = getcwd(NULL); 
     path[0] = '\0';
-    // todayì˜ year, monì„ stringìœ¼ë¡œ ë³€í™˜í•´ ì €ì¥í•  arrayì™€ ìµœì¢…ì ìœ¼ë¡œ pathë¥¼ ì €ì¥í•  arrayë¥¼ ì„ ì–¸í•˜ê³  ì²« index ì´ˆê¸°í™”.
+    // todayÀÇ year, monÀ» stringÀ¸·Î º¯È¯ÇØ ÀúÀåÇÒ array¿Í ÃÖÁ¾ÀûÀ¸·Î path¸¦ ÀúÀåÇÒ array¸¦ ¼±¾ğÇÏ°í Ã¹ index ÃÊ±âÈ­.
     sprintf(path, "%s%d/%d/", PATH, today.year, today.mon);
     if(mkdir(path) == 0)
     {
@@ -13,4 +13,4 @@ int makeFolder(Diary today, char* path[])
     }
     else return -1;
 }
-//í´ë” ì˜ ì•ˆë§Œë“¤ì–´ì§€ë©´ í•˜ë‚˜í•˜ë‚˜ ë§Œë“œëŠ” ì‹ìœ¼ë¡œ í•´ë³´ê¸°.
+//Æú´õ Àß ¾È¸¸µé¾îÁö¸é ÇÏ³ªÇÏ³ª ¸¸µå´Â ½ÄÀ¸·Î ÇØº¸±â.

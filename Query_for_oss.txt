@@ -10,4 +10,4 @@ CREATE TABLE Bible
         Word VARCHAR(1000)
 );
 
-LOAD DATA INFILE 'C:\Users\ê¹€í˜¸ê²½\Documents\GitHub\Team\Team_KHK\Bible_After_Execl.txt'INTO TABLE oss_biblediary.bible CHARACTER SET utf8 FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
+LOAD DATA INFILE 'C:\Users\±èÈ£°æ\Documents\GitHub\Team\Team_KHK\Bible_After_Execl.txt'INTO TABLE oss_biblediary.bible CHARACTER SET utf8 FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
