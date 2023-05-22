@@ -9,4 +9,4 @@ $(TARGET) : $(OBJECTS)
 	$(CC) -o $@ $^
 .PHONY: clean
 clean : 
-	rm -rf *.o diary
+	del *.o diary

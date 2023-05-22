@@ -5,7 +5,7 @@ void saveDiary(Diary today, Bible word)
     FILE *fp;
     char path[20];
     char make_diary[10];
-    char make_diary[0] = '\0';
+    make_diary[0] = '\0';
     makeFolder(today, path);
     char *wd = getcwd(NULL, 0);
     // 파일 포인터 선언, fopen의 경로를 담을 string variable path 선언하고 makeFolder 함수 불러와서 ./년/월의 디렉토리 형성

@@ -1,6 +1,6 @@
 #include "BibleDiary.h"
 
-int makeFolder(Diary today, char* path[])
+int makeFolder(Diary today, char* path)
 {   
     //char *wd = getcwd(NULL); 
     path[0] = '\0';

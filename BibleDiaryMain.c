@@ -6,7 +6,7 @@ int main(void) {
     Diary today, stored;
     Bible recommend, last_word;
     int yy, mm, dd;
-//    todayWord(Bible recommend);
+    todayWord(&recommend);
     while (1) 
     {
         int check = 0;
