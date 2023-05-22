@@ -35,9 +35,7 @@ void todayWord(Bible *recommend)
             fgets(buffer, 200, fp);
         }
     else
-    {
         printf("\n성경 파일 읽어오기에 실패하였습니다.\n");
-        return 0;
-    }
+    
     fclose(fp);
 }

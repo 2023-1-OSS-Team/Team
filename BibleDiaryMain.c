@@ -25,7 +25,7 @@ int main(void) {
         }          
         else if (menu == 2) 
         {
-            readDiary(today);
+            readDiary(today, recommend);
         } 
         else if (menu == 3) 
         {
@@ -37,7 +37,7 @@ int main(void) {
             scanf("%d", &check);
             if (check == 1)
             {
-                if (deleteDiary(today) == 1)
+                if (deleteDiary(&today) == 1)
                 {
                     count--;
                 }
@@ -46,7 +46,7 @@ int main(void) {
         } 
         else if (menu == 5) 
         {
-            saveDiary(today);
+            saveDiary(today, recommend);
         } 
         else if (menu == 6) 
         {
@@ -54,11 +54,11 @@ int main(void) {
         } 
         else if (menu == 7) 
         {
-            readStoredDiary(&today);
+            readStoredDiary(today, recommend);
         } 
         else if (menu == 8) 
         {
-            updateStoredDiary(&today);
+            updateStoredDiary(today, recommend);
         } 
         else if (menu == 9) 
         {        

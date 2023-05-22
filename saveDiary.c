@@ -1,6 +1,6 @@
 #include "BibleDiary.h"
 
-void saveLedger(Diary today, Bible word)
+void saveDiary(Diary today, Bible word)
 {
     FILE *fp;
     char path[20];

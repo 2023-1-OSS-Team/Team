@@ -51,4 +51,5 @@ int loadStoredDiary(Diary *stored, Bible *last_word)
         if(feof(fp)) return;
     }
     chdir(wd);
+    return 1;
 } // 묵상한 말씀 불러오는 기능 추가.
